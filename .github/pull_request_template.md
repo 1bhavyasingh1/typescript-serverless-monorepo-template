@@ -1,23 +1,13 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
----
+## Pull Request
 
-## Problem
+### Objective
 
-<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
+<!-- Summarize what you're changing with this pull request. A few sentences is fine. -->
 
-## Suggested Solution
+### Originating Issue
 
-<!-- A clear and concise description of what you want to happen. -->
+<!-- Optional. Does this fix a specific issue? If so, link it or provide the issue number. -->
 
-## Alternatives
+### Additional Context
 
-<!-- A clear and concise description of any alternative solutions or features you've considered. -->
-
-## Additional context
-
-<!-- Add any other context or screenshots about the feature request here. -->
+<!-- Anything else a reviewer should know? The more detail you provide, the easier it is to review. -->
