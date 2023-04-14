@@ -25,6 +25,7 @@ jobs:
           version: 8
           run_install: false
       - shell: bash
+        id: pnpm-cache # Referenced in next step
         run: |
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
       - uses: actions/cache@v3
