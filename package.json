@@ -7,7 +7,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^17.6.0",
+    "@commitlint/config-conventional": "^17.6.0",
     "@lib/eslint": "workspace:^",
+    "@types/node": "18.15.11",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.38.0",
@@ -22,8 +25,11 @@
     "generate": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* generate",
     "write": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* write",
     "lint": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* lint",
+    "lint:actions": "act --secrets-file .act",
+    "test": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* test",
+    "test:ci": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* test:ci",
     "prepare": "husky install",
-    "commit": "git add --all && cz"
+    "commit": "git add --all && cz && git push --all origin"
   },
   "husky": {
     "hooks": {
@@ -34,5 +40,14 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "dependencies": {
+    "@lib/tsconfig": "workspace:^"
+  },
+  "packageManager": "^pnpm@8.2.0"
 }

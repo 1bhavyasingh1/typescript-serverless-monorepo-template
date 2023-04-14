@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "generate": "prisma generate",
+    "postinstall": "pnpm generate",
     "write": "eslint --fix src && prettier --write src --loglevel warn",
     "lint": "pnpm write && eslint src"
   },
@@ -19,6 +20,7 @@
   "dependencies": {
     "@lib/eslint": "workspace:^",
     "@prisma/client": "^4.12.0",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "zod": "^3.21.4"
   }
 }

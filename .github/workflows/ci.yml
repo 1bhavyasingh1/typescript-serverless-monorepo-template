@@ -1,0 +1,42 @@
+name: ci
+
+on:
+  pull_request:
+    branches: [ main ]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      NEXT_PUBLIC_BASE_URL: ${{ secrets.NEXT_PUBLIC_BASE_URL }}
+    strategy:
+      matrix:
+        node-version: [18.x]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Set up pnpm, using a cache (see: https://github.com/pnpm/action-setup)
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+      - shell: bash
+        id: pnpm-cache # Referenced in next step
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - run: pnpm i
+
+      # Actual linting steps
+      - run: pnpm lint
+      - run: pnpm test:ci
+      - run: pnpm build
