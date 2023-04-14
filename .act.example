@@ -1,0 +1,3 @@
+# Merge all your .env files into this one, if you want to use act (https://github.com/nektos/act/issues)
+NEXT_PUBLIC_BASE_URL=http://localhost:4000
+DATABASE_URL='mysql://...'

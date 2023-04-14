@@ -25,10 +25,11 @@
     "generate": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* generate",
     "write": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* write",
     "lint": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* lint",
+    "lint:actions": "act --secrets-file .act",
     "test": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* test",
     "test:ci": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* test:ci",
     "prepare": "husky install",
-    "commit": "git add --all && cz"
+    "commit": "git add --all && cz && git push --all origin"
   },
   "husky": {
     "hooks": {
@@ -48,5 +49,5 @@
   "dependencies": {
     "@lib/tsconfig": "workspace:^"
   },
-  "packageManager": "^pnpm@8.0.0"
+  "packageManager": "^pnpm@8.2.0"
 }

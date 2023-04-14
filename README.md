@@ -24,6 +24,9 @@ Loosely based off of templates by user [`ixartz`](https://github.com/ixartz). Th
 - ✨ HTTP Api instead of API gateway for cost optimization
 - 💨 Live reload
 
+**Optional Recommendations:**
+- Local GitHub Action Validation w/ [act](https://github.com/nektos/act). The `lint:actions` script in the root directory injects relevant environment variables and runs `act` locally.
+
 ### Philosophy
 
 - 🔥 **Sensible Defaults.** We provide sensible, zero-config defaults when it comes to ESLint, Prettier, and TypeScript. We offer easily extensible system (see [this file](https://github.com/aacitelli/typescript-serverless-monorepo-template/blob/main/lib/eslint/index.js), where the Next.js config extends from the base config, for what we mean) for both ESLint and TypeScript.

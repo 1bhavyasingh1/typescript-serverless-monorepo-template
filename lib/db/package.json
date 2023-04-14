@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "generate": "prisma generate",
+    "postinstall": "pnpm generate",
     "write": "eslint --fix src && prettier --write src --loglevel warn",
     "lint": "pnpm write && eslint src"
   },
