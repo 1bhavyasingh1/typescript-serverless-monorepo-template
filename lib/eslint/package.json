@@ -19,6 +19,6 @@
     "prettier": "^2.8.7"
   },
   "dependencies": {
-    "@lib/eslint": "workspace:^"
+    "@lib/eslint": "workspace:*"
   }
 }

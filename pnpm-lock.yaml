@@ -5,7 +5,7 @@ importers:
   .:
     dependencies:
       '@lib/tsconfig':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:lib/tsconfig
     devDependencies:
       '@commitlint/cli':
@@ -15,7 +15,7 @@ importers:
         specifier: ^17.6.0
         version: 17.6.0
       '@lib/eslint':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:lib/eslint
       '@types/node':
         specifier: 18.15.11
@@ -79,7 +79,7 @@ importers:
         specifier: workspace:*
         version: link:../../lib/db
       '@lib/eslint':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../../lib/eslint
       octokit:
         specifier: ^2.0.14
@@ -192,7 +192,7 @@ importers:
   lib/db:
     dependencies:
       '@lib/eslint':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../eslint
       '@prisma/client':
         specifier: ^4.12.0
@@ -214,7 +214,7 @@ importers:
   lib/eslint:
     dependencies:
       '@lib/eslint':
-        specifier: workspace:^
+        specifier: workspace:*
         version: 'link:'
     devDependencies:
       '@typescript-eslint/eslint-plugin':
@@ -251,7 +251,7 @@ importers:
   lib/tsconfig:
     dependencies:
       '@lib/eslint':
-        specifier: workspace:^
+        specifier: workspace:*
         version: link:../eslint
 
   lib/types: {}
