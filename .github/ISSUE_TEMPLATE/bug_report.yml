@@ -33,14 +33,3 @@ body:
     attributes:
       label: Expected behavior
       description: A clear and concise description of what you expected to happen.
-  - type: textarea
-    id: environment
-    attributes:
-      label: Environment & setup
-      description: In which environment does the problem occur?
-      value: |
-        - OS: <!--[e.g. macOS, Windows, Debian, CentOS, ...]-->
-        - Database: <!--[PostgreSQL, MySQL, PlanetScale, MariaDB, SQL Server, SQLite, MongoDB or CockroachDB]-->
-        - Node.js version: <!--[Run `node -v` to see your Node.js version]-->
-    validations:
-      required: true
