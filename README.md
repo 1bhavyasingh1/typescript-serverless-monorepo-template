@@ -95,5 +95,9 @@ As an open source project working with newer technologies, we will happily take 
 This project will always be free and open source. If we saved you some time and effort, please consider contributing to the developers via the "Sponsor this project" menu on the GitHub repo!
 
 ### Star History
+```
+<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;
+"src="https://star-history.com/embed?secret=Z2hwXzNTQ1lJekZXU0p1dk9NdFlXdk95dlFkVkdkQ01KZjF1ejV2MA==#aacitelli/typescript-serverless-monorepo-template&Date" frameBorder="0">
+</iframe>
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=Z2hwXzNTQ1lJekZXU0p1dk9NdFlXdk95dlFkVkdkQ01KZjF1ejV2MA==#aacitelli/typescript-serverless-monorepo-template&Date" frameBorder="0"></iframe>
+```
