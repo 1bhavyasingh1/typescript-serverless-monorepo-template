@@ -7,5 +7,6 @@
 .next/
 .serverless/
 
+# Lambda bundler related workaround. See: https://github.com/prisma/prisma/discussions/15697#discussioncomment-5611267
 **/server/**/*.node
 **/server/**/schema.prisma

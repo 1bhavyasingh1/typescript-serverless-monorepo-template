@@ -38,7 +38,7 @@ Loosely based off of templates by user [`ixartz`](https://github.com/ixartz). Th
 This is available as a repository, rather than a template, to allow you to treat this as an "upstream" repo and get future updates. So, run the following command on your local environment:
 
 ```
-git clone --depth=1 https://github.com/ixartz/Serverless-Boilerplate-Express-TypeScript.git my-project-name
+git clone --depth=1 https://github.com/aacitelli/typescript-serverless-monorepo-template.git my-project-name
 cd my-project-name
 pnpm i
 ```
