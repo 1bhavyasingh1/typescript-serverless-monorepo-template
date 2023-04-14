@@ -3,6 +3,10 @@ lockfileVersion: '6.0'
 importers:
 
   .:
+    dependencies:
+      '@lib/tsconfig':
+        specifier: workspace:^
+        version: link:lib/tsconfig
     devDependencies:
       '@commitlint/cli':
         specifier: ^17.6.0
@@ -13,6 +17,9 @@ importers:
       '@lib/eslint':
         specifier: workspace:^
         version: link:lib/eslint
+      '@types/node':
+        specifier: 18.15.11
+        version: 18.15.11
       commitizen:
         specifier: ^4.3.0
         version: 4.3.0
@@ -46,6 +53,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      zod:
+        specifier: ^3.21.4
+        version: 3.21.4
     devDependencies:
       '@lib/eslint':
         specifier: workspace:*
@@ -105,6 +115,9 @@ importers:
       serverless-http:
         specifier: ^3.2.0
         version: 3.2.0
+      zod:
+        specifier: ^3.21.4
+        version: 3.21.4
     devDependencies:
       '@lib/eslint':
         specifier: workspace:*
@@ -172,6 +185,9 @@ importers:
       dotenv:
         specifier: ^16.0.3
         version: 16.0.3
+      zod:
+        specifier: ^3.21.4
+        version: 3.21.4
     devDependencies:
       '@lib/tsconfig':
         specifier: workspace:*
@@ -222,6 +238,8 @@ importers:
       '@lib/eslint':
         specifier: workspace:^
         version: link:../eslint
+
+  lib/types: {}
 
 packages:
 
@@ -10093,3 +10111,7 @@ packages:
       compress-commons: 4.1.1
       readable-stream: 3.6.2
     dev: true
+
+  /zod@3.21.4:
+    resolution: {integrity: sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw==}
+    dev: false

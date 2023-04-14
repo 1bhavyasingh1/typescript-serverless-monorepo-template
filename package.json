@@ -10,6 +10,7 @@
     "@commitlint/cli": "^17.6.0",
     "@commitlint/config-conventional": "^17.6.0",
     "@lib/eslint": "workspace:^",
+    "@types/node": "18.15.11",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.38.0",
@@ -43,5 +44,9 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "dependencies": {
+    "@lib/tsconfig": "workspace:^"
+  },
+  "packageManager": "^pnpm@8.0.0"
 }

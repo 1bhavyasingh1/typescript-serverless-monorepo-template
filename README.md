@@ -26,11 +26,11 @@ Loosely based off of templates by user [`ixartz`](https://github.com/ixartz). Th
 
 ### Philosophy
 
-- 🔥 **Lightly Opinionated Best Practice.**  We make some decisions for you to save you time and more quickly get you to production.
+- 🔥 **Sensible Defaults.** We provide sensible, zero-config defaults when it comes to ESLint, Prettier, and TypeScript. We offer easily extensible system (see [this file](https://github.com/aacitelli/typescript-serverless-monorepo-template/blob/main/lib/eslint/index.js), where the Next.js config extends from the base config, for what we mean) for both ESLint and TypeScript.
 - 🔥 **Scalable, Futureproof Architecture.** Next.js has an extremely promising future, pnpm scales well as repo size increases, and your backend runs on AWS Lambda for near-infinite scalability that grows with your usage.
 - 🔥 **80/20 Rule.** We tried to pick the 20% of best practice tools that give you 80% of the benefit.
 
-### Installation
+### Installation & Setup
 
 This is available as a repository, rather than a template, to allow you to treat this as an "upstream" repo and get future updates. So, run the following command on your local environment:
 
@@ -42,6 +42,12 @@ pnpm i
 
 The `--depth 1` causes git to only pull down the most recent commit. After all, you don't really care what happens here before the point at which you clone. You'll still be able to get future updates.
 
+Then:
+
+1. `pnpm i` from root to install dependencies
+2. Copy every `.env.example` file to `.env` and fill in the values.
+3. Add the clientside + serverside environment variables you expect in the Next.js app at `app/client/src/env/schema.mjs`. These are validated via `zod` before builds and runtimes, helping you fail fast.
+
 ### Development
 
 You can run locally in development mode with live reload:
@@ -50,7 +56,29 @@ You can run locally in development mode with live reload:
 pnpm dev
 ```
 
-This will run your frontend and backend concurrently. By default, your frontend will run on `http://localhost:3000` and your backend will run on `http://localhost:4000`. 
+This uses a pnpm v8.0+ feature where you can select multiple scripts to run via regex. This will run your frontend and backend concurrently. By default, your frontend will run on `http://localhost:3000` and your backend will run on `http://localhost:4000`. 
+
+### File Structure
+
+This folder is a `pnpm` monorepo with the following structure:
+
+```shell
+apps/ # All actual apps; the frontend and backend
+  frontend/ # Next.js frontend
+  backend/ # Serverless Express backend
+lib/ # All shared code; installable via `pnpm i -D @lib/<package-name>`
+  db/ # Contains the Prisma client
+  eslint/ # Contains extensible ESLint config files; includes a Base and a Next.js config
+  tsconfig/ # Contains extensible TypeScript config files; includes a Base and a Next.js config
+  types/ # For TypeScript types / Zod types that you want shared across apps
+.eslintrc.cjs # Causes the "default" eslint config to be the base config from `lib/eslint/`
+.gitignore # One .gitignore kept for the repo, for ease of maintenance and deduplication
+.npmrc # Opinionated best practice suggestions for pnpm
+package.json # Also contains dev tooling settings
+package-lock.json
+pnpm-workspace.yaml # Tells pnpm where to look for packages
+renovate.json # Automatic dependency bump PRs; dependabot doesn't support pnpm
+```
 
 ### Contributing
 

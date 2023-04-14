@@ -1,0 +1,13 @@
+{
+  "name": "@lib/types",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "write": "eslint --fix src && prettier --write src --loglevel warn",
+    "lint": "pnpm write && eslint src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

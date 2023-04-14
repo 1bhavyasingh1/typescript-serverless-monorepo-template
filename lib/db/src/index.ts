@@ -1,6 +1,4 @@
-import { config } from "dotenv";
+import "./env/schema";
 
 import { PrismaClient } from "./generated/client";
-config();
-
 export const prisma = new PrismaClient();
