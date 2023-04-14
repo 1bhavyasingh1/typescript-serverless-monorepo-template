@@ -1,23 +1,26 @@
----
+# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
 name: Feature Request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
----
-
-## Problem
-
-<!-- A clear and concise description of what the problem is. Ex. I'm always frustrated when [...] -->
-  
-  ## Suggested solution
-
-<!-- A clear and concise description of what you want to happen. -->
-  
-  ## Alternatives
-
-<!-- A clear and concise description of any alternative solutions or features you've considered. -->
-  
-  ## Additional context
-
-<!-- Add any other context or screenshots about the feature request here. -->
+description: Create a feature request.
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping us improve the project! Please follow the sections in the template and provide as much information as possible about your request.
+  - type: textarea
+    id: description
+    attributes:
+      label: Change Summary
+      description: A clear and concise description of what your pull request addresses.
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Issue
+      description: Does this fix a specific issue? If so, please provide the number or a link.
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Any additional context you'd like to provide. Please include anything you think might be relevant.
