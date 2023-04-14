@@ -161,6 +161,9 @@ importers:
       p-retry:
         specifier: ^5.1.2
         version: 5.1.2
+      prisma:
+        specifier: ^4.12.0
+        version: 4.12.0
       serverless:
         specifier: ^3.30.1
         version: 3.30.1

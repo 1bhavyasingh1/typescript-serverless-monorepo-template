@@ -9,28 +9,6 @@ generator client {
   binaryTargets = ["native", "rhel-openssl-1.0.x"] // Necessary for Serverless Framework
 }
 
-model Repository {
+model User {
   id String @id @default(uuid())
-
-  // Rule-Based Searches
-  stars Int
-  owner String @unique
-
-  // LLM Context
-  name        String
-  description String
-  topics      Topic[]
-  url         String
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@unique([owner, name])
-}
-
-model Topic {
-  id           String      @id @default(uuid())
-  name         String
-  Repository   Repository? @relation(fields: [repositoryId], references: [id])
-  repositoryId String?
 }
