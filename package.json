@@ -20,8 +20,7 @@
     "typescript": "^5.0.4"
   },
   "scripts": {
-    "dev": "pnpm --parallel --filter ./{apps,lib}/* dev",
-    "build": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* build",
+    "dev": "pnpm --parallel --filter ./{apps,lib}/* dev\",\n    \"build\": \"pnpm --parallel --aggregate-output --filter ./{apps,lib}/* build",
     "generate": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* generate",
     "write": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* write",
     "lint": "pnpm --parallel --aggregate-output --filter ./{apps,lib}/* lint",

@@ -5,3 +5,7 @@
 .idea/
 .vscode/
 .next/
+.serverless/
+
+**/server/**/*.node
+**/server/**/schema.prisma
