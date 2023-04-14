@@ -1,6 +1,6 @@
 datasource db {
   provider = "mysql"
-  url      = "mysql://gjn7bax8hx5awfywa7o4:pscale_pw_OWuRNCR6ue3PboLrQGqElzvnSROF3nbfjqyUlCVxCUr@aws.connect.psdb.cloud/open-source-finder?ssl={'rejectUnauthorized':true}"
+  url      = env("DATABASE_URL")
 }
 
 generator client {
